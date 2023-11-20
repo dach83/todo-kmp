@@ -1,12 +1,13 @@
 package di
 
-import data.InMemoryRepository
-import domain.Repository
+import data.InMemoryTodoRepository
+import domain.TodoRepository
 import org.koin.dsl.module
+import presentation.todo.TodoViewModel
 
 val appModule = module {
 
-    single<String> { "Hello koin" }
+    single<TodoRepository> { InMemoryTodoRepository() }
 
-    single<Repository> { InMemoryRepository() }
+    viewModelDefinition { TodoViewModel(get()) }
 }

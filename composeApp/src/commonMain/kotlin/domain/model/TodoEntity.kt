@@ -2,7 +2,7 @@ package domain.model
 
 import kotlinx.datetime.Clock
 
-data class TodoItem(
+data class TodoEntity(
     val id: Int,
     val title: String,
     val subtitle: String,
