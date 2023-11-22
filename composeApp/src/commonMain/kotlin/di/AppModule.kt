@@ -9,5 +9,10 @@ val appModule = module {
 
     single<TodoRepository> { InMemoryTodoRepository() }
 
-    viewModelDefinition { TodoViewModel(get()) }
+    viewModelDefinition {
+        TodoViewModel(
+            dispatchers = get(),
+            repository = get()
+        )
+    }
 }

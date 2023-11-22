@@ -3,6 +3,7 @@ package theme
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 
 private val darkColorScheme = darkColors(
     primary = Dark500,
@@ -13,6 +14,10 @@ private val darkColorScheme = darkColors(
 fun TodoTheme(
     content: @Composable () -> Unit
 ) {
+    PlatformColors(
+        statusBarColor = darkColorScheme.primary,
+        navBarColor = Color.Black
+    )
     MaterialTheme(colors = darkColorScheme) {
         content()
     }
