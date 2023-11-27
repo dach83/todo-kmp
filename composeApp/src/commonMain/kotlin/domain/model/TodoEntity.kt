@@ -3,10 +3,10 @@ package domain.model
 import kotlinx.datetime.Clock
 
 data class TodoEntity(
-    val id: Int,
+    val id: Int = 0,
     val title: String,
     val subtitle: String,
-    val done: Boolean,
+    val done: Boolean = false,
     val added: Long = Clock.System.now().toEpochMilliseconds()
 )
 
