@@ -253,7 +253,7 @@ fun LazyItemScope.TodoItem(
                 Icon(
                     imageVector = Icons.Default.Delete,
                     contentDescription = null,
-                    tint = color,
+                    tint = Color.White,
                     modifier = Modifier.clickable {
                         onDelete()
                     }
