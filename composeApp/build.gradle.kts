@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.sqlDelight)
 }
 
 kotlin {
@@ -37,11 +38,18 @@ kotlin {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.koin.android)
+            implementation(libs.sqldelight.android.driver)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
             runtimeOnly(libs.kotlinx.coroutines.swing)
+            implementation(libs.sqldelight.sqlite.driver)
         }
+
+        iosMain.dependencies {
+            implementation(libs.sqldelight.native.driver)
+        }
+
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
@@ -50,6 +58,7 @@ kotlin {
             implementation(compose.components.resources)
             implementation(libs.koin.compose)
             implementation(libs.kotlinx.datetime)
+            implementation(libs.sqldelight.coroutines.extensions)
         }
     }
 }
@@ -104,4 +113,13 @@ compose.desktop {
             packageVersion = "1.0.0"
         }
     }
+}
+
+sqldelight {
+    databases {
+        create("Database") {
+            packageName.set("com.github.dach83.todo")
+        }
+    }
+    linkSqlite.set(true)
 }

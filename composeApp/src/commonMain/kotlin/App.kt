@@ -1,17 +1,11 @@
 import androidx.compose.runtime.Composable
-import di.appModule
-import di.platformModule
-import org.koin.compose.KoinApplication
+import org.koin.compose.KoinContext
 import presentation.todo.compose.TodoScreen
 import theme.TodoTheme
 
 @Composable
 fun App() {
-    KoinApplication(
-        application = {
-            modules(appModule, platformModule)
-        }
-    ) {
+    KoinContext {
         TodoTheme {
             TodoScreen()
         }

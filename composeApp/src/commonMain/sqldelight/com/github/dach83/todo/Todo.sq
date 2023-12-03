@@ -1,0 +1,24 @@
+import kotlin.Boolean;
+
+
+CREATE TABLE todo (
+  id INTEGER PRIMARY KEY NOT NULL,
+  title TEXT NOT NULL,
+  subtitle TEXT NOT NULL,
+  done INTEGER AS Boolean DEFAULT 0
+);
+
+selectAll:
+SELECT *
+FROM todo;
+
+insert:
+INSERT INTO todo(title, subtitle, done)
+VALUES ?;
+
+update:
+INSERT OR REPLACE INTO todo(id, title, subtitle, done)
+VALUES ?;
+
+delete:
+DELETE FROM todo WHERE id = ?;

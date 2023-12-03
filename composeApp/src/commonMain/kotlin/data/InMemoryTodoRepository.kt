@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.update
 
 class InMemoryTodoRepository : TodoRepository {
 
-    private var lastId = 0
+    private var lastId = 0L
     private val todos = MutableStateFlow<List<TodoEntity>>(emptyList())
 
     override suspend fun getTodos(): Flow<List<TodoEntity>> {
