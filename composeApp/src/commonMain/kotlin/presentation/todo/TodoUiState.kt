@@ -1,13 +1,17 @@
 package presentation.todo
 
-import domain.model.TodoEntity
+import domain.model.TodoSection
 
 data class TodoUiState(
-    val todos: List<TodoEntity>
+    val notTodosYet: Boolean,
+    val doneSection: TodoSection,
+    val undoneSection: TodoSection
 ) {
     companion object {
         val DEFAULT = TodoUiState(
-            todos = emptyList()
+            notTodosYet = true,
+            doneSection = TodoSection.EMPTY,
+            undoneSection = TodoSection.EMPTY
         )
     }
 }

@@ -2,7 +2,7 @@ import androidx.compose.runtime.Composable
 import di.appModule
 import di.platformModule
 import org.koin.compose.KoinApplication
-import presentation.todo.TodoScreen
+import presentation.todo.compose.TodoScreen
 import theme.TodoTheme
 
 @Composable
