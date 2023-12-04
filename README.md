@@ -1,4 +1,7 @@
+# Multiplatform TODO App 
 This is a Kotlin Multiplatform project targeting Android, iOS, Desktop.
+
+![done](demo/click.gif)
 
 * `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
   It contains several subfolders:
